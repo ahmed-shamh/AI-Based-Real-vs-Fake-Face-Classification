@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Deep Fake Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <i class='bx bx-shield-alt-2'></i>
+            <h3>Deep Fake Detector</h3>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class='bx bx-moon'></i>
+                </button>
+            </li>
+        </ul>
+        
+        <button class="mobile-menu" onclick="toggleMobileMenu()">
+            <i class='bx bx-menu'></i>
+        </button>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get In Touch</h1>
+                <p>We'd love to hear from you. Contact us for questions, support, or partnership opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 style="color: var(--dark-brown); margin-bottom: 30px;">Contact Information</h2>
+                    
+                    <div class="contact-item">
+                        <i class='bx bx-envelope'></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>contact@deepfakedetector.com</p>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class='bx bx-phone'></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Mon-Fri from 9am to 6pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class='bx bx-map'></i>
+                        <div>
+                            <h3>Visit Us</h3>
+                            <p>AI College Campus</p>
+                            <p>123 Innovation Drive</p>
+                            <p>Tech City, TC 12345</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class='bx bx-time-five'></i>
+                        <div>
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2 style="color: var(--dark-brown); margin-bottom: 30px;">Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class='bx bx-send'></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="upload-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about our service</p>
+            </div>
+            
+            <div class="feature-detail-grid">
+                <div class="feature-detail-card">
+                    <h3>How accurate is the detection?</h3>
+                    <p>Our current model achieves 99.2% accuracy across diverse test datasets. However, accuracy may vary depending on image quality and the sophistication of the deep fake.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <h3>What file formats are supported?</h3>
+                    <p>We currently support JPG and PNG image formats. Video support is planned for future releases.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <h3>Is my data secure?</h3>
+                    <p>Yes, all uploaded files are processed with end-to-end encryption and are automatically deleted after analysis. We never store your personal data.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <h3>Can I integrate this into my application?</h3>
+                    <p>Absolutely! We offer API access for developers. Contact us for API documentation and integration support.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <h3>How long does analysis take?</h3>
+                    <p>Most images are analyzed in under 50 milliseconds. The exact time depends on image size and server load.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <h3>Do you offer enterprise solutions?</h3>
+                    <p>Yes, we provide customized enterprise solutions with additional features, higher rate limits, and dedicated support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="features-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Need Immediate Assistance?</h2>
+                <p>Our support team is here to help you get the most out of our platform</p>
+                <div class="cta-buttons">
+                    <a href="mailto:contact@deepfakedetector.com" class="btn btn-primary">
+                        <i class='bx bx-envelope'></i>
+                        Email Support
+                    </a>
+                    <a href="index.html#detector" class="btn btn-secondary">
+                        <i class='bx bx-analyse'></i>
+                        Try Detector
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <i class='bx bx-shield-alt-2'></i>
+                        <span>Deep Fake Detector</span>
+                    </div>
+                    <p>Advanced AI technology to protect digital authenticity and combat synthetic media manipulation.</p>
+                </div>
+                
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Access</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Team Credits -->
+            <div class="team-credits">
+                <h4>Development Team</h4>
+                <div class="team-members">
+                    <span>Ahmed Shamh , Mohamed Ibrahim , Mohamed Mahmoud , Malak Ahmed , Menna Khattab , Noor Elsayed</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Deep Fake Detector. Developed by Artificial Intelligence Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.reset();
+                });
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

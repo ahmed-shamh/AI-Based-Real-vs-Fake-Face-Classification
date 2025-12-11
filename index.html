@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Fake Detector - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <i class='bx bx-shield-alt-2'></i>
+            <h3>Deep Fake Detector</h3>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class='bx bx-moon'></i>
+                </button>
+            </li>
+        </ul>
+        
+        <button class="mobile-menu" onclick="toggleMobileMenu()">
+            <i class='bx bx-menu'></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">AI-Powered Detection</span>
+                <h1>Detect Deep Fakes with Advanced Artificial Intelligence</h1>
+                <p>Our cutting-edge technology analyzes images and videos to identify synthetic media with unprecedented accuracy.</p>
+                <div class="cta-buttons">
+                    <a href="#detector" class="btn btn-primary">
+                        <i class='bx bx-analyse'></i>
+                        Try Detector
+                    </a>
+                    <a href="about.html" class="btn btn-secondary">
+                        <i class='bx bx-info-circle'></i>
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section" id="detector">
+        <div class="container">
+            <div class="section-header">
+                <h2>Deep Fake Detection</h2>
+                <p>Upload an image to analyze it with our advanced AI models</p>
+            </div>
+            
+            <div class="upload-box">
+                <div class="upload-header">
+                    <i class='bx bx-cloud-upload'></i>
+                    <h2>Upload Image for Analysis</h2>
+                    <p>Supported formats: JPG, PNG</p>
+                </div>
+                
+                <div id="drop-area">
+                    <div class="drop-content">
+                        <i class='bx bx-image-add'></i>
+                        <h3>Drag & Drop Image Here</h3>
+                        <p>or click to browse files</p>
+                        <div class="file-types">
+                            <span class="file-tag">JPG</span>
+                            <span class="file-tag">PNG</span>
+                        </div>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+                
+                <div class="preview-container" id="previewContainer">
+                    <img id="preview-img" src="" alt="Preview">
+                </div>
+
+                <!-- TWO ANALYZE BUTTONS -->
+                <div class="analyze-buttons">
+                    <button class="analyze-btn" id="xceptionBtn">
+                        <i class='bx bx-chip'></i>
+                        <span class="btn-text">
+                            <span class="btn-title">Analyze with Xception</span>
+                            <span class="btn-subtitle">Fast & Accurate</span>
+                        </span>
+                    </button>
+                    
+                    <button class="analyze-btn" id="swinBtn">
+                        <i class='bx bx-brain'></i>
+                        <span class="btn-text">
+                            <span class="btn-title">Analyze with Swin</span>
+                            <span class="btn-subtitle">Advanced Detection</span>
+                        </span>
+                    </button>
+                </div>
+                
+                <div class="spinner" id="spinner"></div>
+                
+                <div class="result-container" id="result">
+                    <div class="result-icon">
+                        <i class='bx bx-check-shield'></i>
+                    </div>
+                    <div class="result-content">
+                        <h3>Analysis Result</h3>
+                        <p>Upload an image to begin analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Preview -->
+    <section class="upload-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Platform</h2>
+                <p>Advanced features for comprehensive deep fake detection</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-brain'></i>
+                    </div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced neural networks trained on millions of real and synthetic media samples</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-time-five'></i>
+                    </div>
+                    <h3>Real-Time Detection</h3>
+                    <p>Instant analysis with results delivered in milliseconds for quick verification</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-shield-quarter'></i>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>Industry-leading accuracy rates with continuous model improvements</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="features.html" class="btn btn-secondary">
+                    View All Features
+                    <i class='bx bx-arrow-back'></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <i class='bx bx-shield-alt-2'></i>
+                        <span>Deep Fake Detector</span>
+                    </div>
+                    <p>Advanced AI technology to protect digital authenticity and combat synthetic media manipulation.</p>
+                </div>
+                
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Access</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Team Credits -->
+            <div class="team-credits">
+                <h4>Development Team</h4>
+                <div class="team-members">
+                    <span>Ahmed Shamh , Mohamed Ibrahim , Mohamed Mahmoud , Malak Ahmed , Menna Khattab , Noor Elsayed</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Deep Fake Detector. Developed by Artificial Intelligence Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

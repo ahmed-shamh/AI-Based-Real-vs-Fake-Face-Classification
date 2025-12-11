@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deepfake Detection — UI</title>
+
+  <!-- Google Font (Poppins) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Prevent aggressive caching while developing (optional) -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <style>
+    /* ===== Theme variables (easy to tweak) ===== */
+    :root{
+      --bg: #0a0a0f;
+      --card: rgba(255,255,255,0.06);
+      --muted: #bdbdbd;
+      --accent1: #8a4fff;   /* purple */
+      --accent2: #00eaff;   /* cyan */
+      --accent-grad: linear-gradient(90deg, var(--accent1), var(--accent2));
+      --glass-border: rgba(255,255,255,0.08);
+      --glass-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* ===== Base ===== */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100%;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      transition:background .3s, color .3s;
+    }
+
+    .light-mode{ background: #f5f6f8; color:#111 }
+
+    /* ===== Navbar ===== */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 28px;
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(8px);
+      position:sticky;
+      top:0;
+      z-index:40;
+      border-bottom:1px solid rgba(255,255,255,0.02);
+    }
+    .brand{ color:var(--accent2); font-weight:700; letter-spacing:1px; }
+    .toggle-btn{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--accent2);
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+
+    /* ===== Header ===== */
+    .header{ text-align:center; padding:64px 20px 28px; max-width:1000px; margin:0 auto }
+    .title{
+      font-size:48px; margin:0 0 6px;
+      background:var(--accent-grad);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent; /* required for Chrome/Safari */
+    }
+    .subtitle{ color:var(--muted); margin:0 auto; max-width:760px; line-height:1.6 }
+
+    /* ===== Card / Upload box ===== */
+    .upload-box{
+      width:92%; max-width:760px; margin:28px auto;
+      background:var(--card);
+      border-radius:16px;
+      padding:28px;
+      box-shadow:var(--glass-shadow);
+      border:1px solid var(--glass-border);
+      transition:transform .18s, box-shadow .18s;
+      /* clip fix (standard + webkit) - inside selector */
+      background-clip: padding-box;
+      -webkit-background-clip: padding-box;
+    }
+    .upload-box:hover{ transform:translateY(-6px); box-shadow:0 18px 55px rgba(0,0,0,0.6) }
+
+    /* Drop area */
+    #drop-area{
+      border:2px dashed rgba(255,255,255,0.06);
+      padding:28px;
+      border-radius:12px;
+      text-align:center;
+      transition:background .12s, border-color .12s;
+      cursor:pointer;
+      color:#ddd;
+    }
+    #drop-area.dragover{ background: rgba(0, 230, 255, 0.04); border-color: var(--accent2); color:#fff }
+
+    input[type=file]{ display:none; }
+    #preview-img{ display:none; width:100%; max-height:360px; object-fit:cover; border-radius:10px; margin-top:18px; box-shadow: 0 8px 30px rgba(0,0,0,0.45) }
+
+    /* buttons & spinner */
+    .controls{ display:flex; gap:12px; align-items:center; justify-content:center; margin-top:18px; flex-wrap:wrap }
+    .btn-primary{
+      background: linear-gradient(135deg,var(--accent1),var(--accent2));
+      border:none; color:white; padding:10px 18px; border-radius:10px; cursor:pointer; font-weight:600;
+      box-shadow: 0 8px 30px rgba(138,79,255,0.18);
+    }
+    .btn-ghost{ background:transparent; color:var(--accent2); border:1px solid rgba(255,255,255,0.06); padding:10px 14px; border-radius:10px; cursor:pointer }
+    .spinner{ display:none; width:36px; height:36px; border-radius:50%; border:4px solid rgba(255,255,255,0.15); border-top-color:var(--accent2); animation:spin 1s linear infinite }
+
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    /* result */
+    .result{ margin-top:18px; text-align:center; font-weight:700; font-size:20px; color:var(--accent2) }
+
+    /* features */
+    .features{ max-width:1000px; margin:40px auto; padding:0 20px 60px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) }
+    .feature{ background:rgba(255,255,255,0.03); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.03) }
+    .feature h4{ color:var(--accent2); margin:0 0 8px }
+
+    /* small screens */
+    @media (max-width:720px){
+      .title{ font-size:32px }
+      .header{ padding:40px 16px 18px }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="brand">Deepfake AI</div>
+    <button class="toggle-btn" id="toggleBtn">Light / Dark</button>
+  </div>
+
+  <main>
+    <section class="header">
+      <h1 class="title">DEEPFAKE DETECTION</h1>
+      <p class="subtitle">Upload an image frame and our EfficientNet-based model will classify whether the frame is Original or manipulated (Deepfake). Fast inference, API-ready, designed for production testing.</p>
+    </section>
+
+    <section class="upload-box" aria-label="upload">
+      <div id="drop-area">
+        <p><strong>Drag & drop</strong> an image here, or <button class="btn-ghost" id="browseBtn">Browse</button></p>
+        <input type="file" id="fileInput" accept="image/*" />
+        <img id="preview-img" alt="preview" />
+      </div>
+
+      <div class="controls">
+        <button class="btn-primary" id="analyzeBtn">Analyze</button>
+        <div class="spinner" id="spinner"></div>
+      </div>
+
+      <div class="result" id="result">Prediction: <span id="predictionText">None</span></div>
+    </section>
+
+    <section class="features" aria-label="features">
+      <div class="feature">
+        <h4>Fast Inference</h4>
+        <p>Optimized model pipeline yields low latency predictions.</p>
+      </div>
+      <div class="feature">
+        <h4>Robust Training</h4>
+        <p>Trained on diverse datasets to reduce false positives.</p>
+      </div>
+      <div class="feature">
+        <h4>API Ready</h4>
+        <p>Exposes a POST /predict endpoint that accepts image files.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tiny helper: ensure CSS loaded (dev check)
+    console.log("UI loaded. Font: Poppins; Accent:", getComputedStyle(document.documentElement).getPropertyValue('--accent2'));
+
+    const fileInput = document.getElementById('fileInput');
+    const browseBtn = document.getElementById('browseBtn');
+    const dropArea = document.getElementById('drop-area');
+    const previewImg = document.getElementById('preview-img');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const spinner = document.getElementById('spinner');
+    const predictionText = document.getElementById('predictionText');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    browseBtn.addEventListener('click', () => fileInput.click());
+
+    // drag & drop
+    ['dragenter','dragover'].forEach(evt => {
+      dropArea.addEventListener(evt, e => { e.preventDefault(); dropArea.classList.add('dragover') });
+    });
+    ['dragleave','drop'].forEach(evt => {
+      dropArea.addEventListener(evt, e => { e.preventDefault(); dropArea.classList.remove('dragover') });
+    });
+    dropArea.addEventListener('drop', e => {
+      const f = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) handleFile(f);
+    });
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+    });
+
+    function handleFile(file){
+      const reader = new FileReader();
+      reader.onload = () => {
+        previewImg.src = reader.result;
+        previewImg.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    analyzeBtn.addEventListener('click', async ()=>{
+      const file = fileInput.files[0];
+      if (!file) return alert("Please pick an image first.");
+
+      spinner.style.display='inline-block';
+      predictionText.textContent = 'Scanning...';
+
+      try {
+        const fd = new FormData();
+        fd.append('file', file);
+
+        const res = await fetch('https://melancholily-dynamitic-tonette.ngrok-free.dev/predict', {
+          method: 'POST',
+          body: fd
+        });
+
+        if (!res.ok) throw new Error('Network response not ok: ' + res.status);
+        const j = await res.json();
+        predictionText.textContent = j.prediction || 'No result';
+      } catch (err) {
+        console.error(err);
+        predictionText.textContent = 'Error';
+        alert('Request failed — check console for details (CORS or network).');
+      } finally {
+        spinner.style.display='none';
+      }
+    });
+
+    toggleBtn.addEventListener('click', ()=> document.body.classList.toggle('light-mode'));
+  </script>
+</body>
+</html>

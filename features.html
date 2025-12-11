@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Deep Fake Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <i class='bx bx-shield-alt-2'></i>
+            <h3>Deep Fake Detector</h3>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html" class="active">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class='bx bx-moon'></i>
+                </button>
+            </li>
+        </ul>
+        
+        <button class="mobile-menu" onclick="toggleMobileMenu()">
+            <i class='bx bx-menu'></i>
+        </button>
+    </nav>
+
+    <!-- Features Hero -->
+    <section class="features-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Powerful Features</h1>
+                <p>Comprehensive tools for deep fake detection and media verification</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Detail -->
+    <section class="features-detail">
+        <div class="container">
+            <div class="feature-detail-grid">
+                <div class="feature-detail-card">
+                    <i class='bx bx-brain'></i>
+                    <h3>Advanced AI Analysis</h3>
+                    <p>Leverages state-of-the-art convolutional neural networks trained on millions of images to detect subtle artifacts and inconsistencies characteristic of synthetic media.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-time-five'></i>
+                    <h3>Real-Time Processing</h3>
+                    <p>Analyze images in under 50 milliseconds with our optimized inference pipeline, providing instant results for time-sensitive verification needs.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-trending-up'></i>
+                    <h3>High Accuracy Rate</h3>
+                    <p>Achieves 99.2% accuracy in detecting deep fakes across diverse datasets, with continuous model improvements and regular updates.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-shield-quarter'></i>
+                    <h3>Multi-Layer Detection</h3>
+                    <p>Combines multiple detection algorithms including facial analysis, texture examination, and digital artifact identification for comprehensive verification.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-data'></i>
+                    <h3>Detailed Analytics</h3>
+                    <p>Receive comprehensive analysis reports with confidence scores, detected artifacts, and detailed explanations of the verification process.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-lock-alt'></i>
+                    <h3>Privacy-First Approach</h3>
+                    <p>Your files are processed securely with end-to-end encryption and are never stored on our servers, ensuring complete data privacy.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-api'></i>
+                    <h3>API Integration</h3>
+                    <p>Seamlessly integrate our detection capabilities into your applications, websites, or security systems with our robust REST API.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-cloud-upload'></i>
+                    <h3>Batch Processing</h3>
+                    <p>Upload and analyze multiple images simultaneously with our batch processing feature, ideal for media organizations and research institutions.</p>
+                </div>
+                
+                <div class="feature-detail-card">
+                    <i class='bx bx-line-chart'></i>
+                    <h3>Continuous Learning</h3>
+                    <p>Our models continuously learn from new data and emerging deep fake techniques, ensuring ongoing improvement and adaptation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="upload-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Use Cases</h2>
+                <p>How different industries benefit from our technology</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-news'></i>
+                    </div>
+                    <h3>Journalism & Media</h3>
+                    <p>Verify user-generated content and social media posts before publication to maintain credibility and combat misinformation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-shield'></i>
+                    </div>
+                    <h3>Law Enforcement</h3>
+                    <p>Authenticate digital evidence and identify manipulated media in investigations and legal proceedings.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-building'></i>
+                    </div>
+                    <h3>Corporate Security</h3>
+                    <p>Protect organizations from fraud, identity theft, and social engineering attacks using synthetic media.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-group'></i>
+                    </div>
+                    <h3>Social Platforms</h3>
+                    <p>Integrate detection capabilities to automatically flag and review potentially manipulated content.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-search-alt'></i>
+                    </div>
+                    <h3>Research & Education</h3>
+                    <p>Academic institutions and researchers studying synthetic media and digital forensics.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-user-check'></i>
+                    </div>
+                    <h3>Individual Users</h3>
+                    <p>Verify suspicious images and protect personal digital security with easy-to-use detection tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="features-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Join thousands of users who trust our platform for deep fake detection</p>
+                <div class="cta-buttons">
+                    <a href="index.html#detector" class="btn btn-primary">
+                        <i class='bx bx-analyse'></i>
+                        Try It Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class='bx bx-chat'></i>
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <i class='bx bx-shield-alt-2'></i>
+                        <span>Deep Fake Detector</span>
+                    </div>
+                    <p>Advanced AI technology to protect digital authenticity and combat synthetic media manipulation.</p>
+                </div>
+                
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Access</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Team Credits -->
+            <div class="team-credits">
+                <h4>Development Team</h4>
+                <div class="team-members">
+                    <span>Ahmed Shamh , Mohamed Ibrahim , Mohamed Mahmoud , Malak Ahmed , Menna Khattab , Noor Elsayed</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Deep Fake Detector. Developed by Artificial Intelligence Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

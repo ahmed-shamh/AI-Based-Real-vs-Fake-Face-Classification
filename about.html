@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Deep Fake Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <i class='bx bx-shield-alt-2'></i>
+            <h3>Deep Fake Detector</h3>
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class='bx bx-moon'></i>
+                </button>
+            </li>
+        </ul>
+        
+        <button class="mobile-menu" onclick="toggleMobileMenu()">
+            <i class='bx bx-menu'></i>
+        </button>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About Our Mission</h1>
+                <p>Combating synthetic media manipulation with cutting-edge AI technology</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="about-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2023, Deep Fake Detector emerged from the growing concern about the proliferation of synthetic media and its potential to spread misinformation, manipulate public opinion, and undermine digital trust.</p>
+                    <p>Our team of AI researchers and cybersecurity experts recognized the urgent need for accessible, reliable tools to detect and combat deep fake technology.</p>
+                    <p>What started as a research project at AI College has evolved into a comprehensive platform trusted by journalists, fact-checkers, and security professionals worldwide.</p>
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class='bx bx-chat'></i>
+                        Get In Touch
+                    </a>
+                </div>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="AI Research Lab">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="upload-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mission Vision">
+                </div>
+                <div class="content-text">
+                    <h2>Mission & Vision</h2>
+                    <p><strong>Our Mission:</strong> To develop and deploy advanced AI solutions that empower individuals and organizations to verify digital media authenticity and combat synthetic media manipulation.</p>
+                    <p><strong>Our Vision:</strong> A digital ecosystem where trust in media is restored through transparent, accessible, and reliable verification tools.</p>
+                    <p>We believe that everyone should have access to technology that can distinguish between genuine and manipulated content, ensuring informed decision-making in the digital age.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Impact</h2>
+                <p>Numbers that showcase our commitment to digital authenticity</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">500K+</span>
+                    <span class="stat-label">Images Analyzed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.2%</span>
+                    <span class="stat-label">Accuracy Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50ms</span>
+                    <span class="stat-label">Average Analysis Time</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="about-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-text">
+                    <h2>Advanced Technology</h2>
+                    <p>Our deep fake detection system leverages state-of-the-art convolutional neural networks (CNNs) trained on diverse datasets containing millions of real and synthetic images.</p>
+                    <p>The model analyzes subtle artifacts, inconsistencies, and patterns that are characteristic of AI-generated content, including:</p>
+                    <ul style="color: var(--text-light); margin: 20px 0; padding-left: 20px;">
+                        <li>Facial feature inconsistencies</li>
+                        <li>Texture anomalies</li>
+                        <li>Lighting and shadow irregularities</li>
+                        <li>Background artifacts</li>
+                        <li>Digital noise patterns</li>
+                    </ul>
+                    <p>Continuous learning ensures our system adapts to new deep fake generation techniques as they emerge.</p>
+                </div>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="AI Technology">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="upload-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Development Team</h2>
+                <p>The talented individuals who made this project possible</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-code-alt'></i>
+                    </div>
+                    <h3>Ahmed Shamh</h3>
+                    <p>Full Stack Developer specialized in AI integration and backend development</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-palette'></i>
+                    </div>
+                    <h3>Malak Ahmed</h3>
+                    <p>UI/UX Designer who created the beautiful interface and user experience design</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-test-tube'></i>
+                    </div>
+                    <h3>Menna Khattab</h3>
+                    <p>AI Research Specialist focused on model training and algorithm optimization</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-server'></i>
+                    </div>
+                    <h3>Mohamed Ibrahim</h3>
+                    <p>Backend Engineer who developed the API infrastructure and server architecture</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-shield'></i>
+                    </div>
+                    <h3>Mohamed Mahmoud</h3>
+                    <p>Security Specialist who ensured data protection and system security</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-data'></i>
+                    </div>
+                    <h3>Noor Elsayed</h3>
+                    <p>Data Scientist who managed datasets and model performance analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <i class='bx bx-shield-alt-2'></i>
+                        <span>Deep Fake Detector</span>
+                    </div>
+                    <p>Advanced AI technology to protect digital authenticity and combat synthetic media manipulation.</p>
+                </div>
+                
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Access</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Team Credits -->
+            <div class="team-credits">
+                <h4>Development Team</h4>
+                <div class="team-members">
+                    <span>Ahmed Shamh , Mohamed Ibrahim , Mohamed Mahmoud , Malak Ahmed , Menna Khattab , Noor Elsayed</span>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Deep Fake Detector. Developed by Artificial Intelligence Students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
