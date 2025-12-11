@@ -56,7 +56,11 @@ The project includes:
 ### Elhdad
 - GUI Development  
 - Swin Model Engineering  
-- Training Pipeline & Checkpoints  
+- Training Pipeline & Checkpoints
+- <img width="1866" height="853" alt="image" src="https://github.com/user-attachments/assets/32046783-0d4d-45b8-a3ea-c15c8f20fb45" />
+<img width="1851" height="857" alt="image" src="https://github.com/user-attachments/assets/98214222-88cd-4ab0-ae02-8654574f269a" />
+
+
 
 ---
 
